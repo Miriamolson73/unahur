@@ -1,8 +1,42 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
-const Producto = ({producto}) => {
-    const
-    return (<h3>{producto.id}{producto.articulo}{producto.precio}</h3>  );
+const Producto = ({producto,productos,changuito,agregarProducto}) => {
+    //extraer valores
+    const {id,articulo,precio}= producto;
+
+    //funcion para agregar productos al changuito
+
+    const selecionarProducto=(id) => {
+
+        const producto= productos.filter(
+
+            producto => producto.id===id)[0];
+            agregarProducto([
+                ...changuito,
+                producto]);
+        
+        console.log(producto);
+    }
+
+    return (
+        <Fragment>
+            <div>
+            <h3>{id}{articulo}{precio}</h3>
+            {
+                productos
+
+                ? 
+                <button
+                type="button" onClick={()=> selecionarProducto(id)}> Comprar </button>
+
+                :
+                <button
+                type="button" > Eliminar </button>
+
+            }
+           
+            </div>
+        </Fragment>  );
 }
  
 export  default Producto  ;

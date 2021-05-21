@@ -2,6 +2,7 @@ import { Fragment, useState } from "react";
 import Footer from "./components/Footer";
 import Header from "./components/Headers";
 import Producto from "./components/Producto";
+import Changuito from "./components/Changuito";
 
 function App() {
 
@@ -17,6 +18,9 @@ function App() {
         {id:3, articulo:" Limonero ", precio: 1200}
         
       ]);
+      //state el changuito
+      const [changuito,agregarProducto]=useState([]);
+
   return (
     <Fragment>
     
@@ -24,12 +28,20 @@ function App() {
       <Header />
       <h1>Las Mejores Pantas al Mejor Precio Compra OnLine </h1> 
       {productos.map(producto=>(
-      <Producto
-      key={producto.id}
-      producto={producto} />) 
+          <Producto
+          key={producto.id}
+          producto={producto}
+          productos={productos}
+          changuito={changuito} 
+          agregarProducto={agregarProducto}
+          />) 
       )}
       
-
+      <Changuito
+       
+       
+        changuito={changuito}
+      />
       <Footer
         anio={2021}/>
     </Fragment>    
