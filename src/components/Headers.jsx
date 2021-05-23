@@ -3,7 +3,7 @@ import React from 'react';
 const Header = () => {
     return ( 
         <div>
-            VIVERO LA FLOR DE LIS
+           <h5>VIVERO LA FLOR DE LIS</h5> 
         </div>
 
      );

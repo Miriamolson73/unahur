@@ -18,6 +18,21 @@ const Producto = ({producto,productos,changuito,agregarProducto}) => {
         console.log(producto);
     }
 
+    // ELIMINAR DE CHANGUITO
+    const eliminarProducto=(id) => {
+
+        const compra= changuito.filter(
+            producto => producto.id !== id)[0];
+            agregarProducto([
+               changuito,producto
+                ]);
+     
+            
+             
+        
+        console.log(compra);
+    } 
+
     return (
         <Fragment>
             <div>
@@ -30,9 +45,10 @@ const Producto = ({producto,productos,changuito,agregarProducto}) => {
                 type="button" onClick={()=> selecionarProducto(id)}> Comprar </button>
 
                 :
+               
+               
                 <button
-                type="button" > Eliminar </button>
-
+                type="button" onClick={()=> eliminarProducto(id)}> Eliminar </button> 
             }
            
             </div>
