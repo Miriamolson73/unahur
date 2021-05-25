@@ -24,7 +24,7 @@ function App() {
     
      
       <Header />
-      <h1>Las Mejores Plantas al Mejor Precio Compra OnLine </h1> 
+      <h4>Las mas Lindas Plantas al Mejor Precio "Compra OnLine" </h4> 
       {productos.map(producto=>(
           <Producto
           key={producto.id}
@@ -37,9 +37,10 @@ function App() {
       )}
       
       <Changuito
-       
+      
        
         changuito={changuito}
+        agregarProducto={agregarProducto}
       />
       <Footer
         anio={2021}/>

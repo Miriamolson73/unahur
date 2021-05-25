@@ -13,30 +13,29 @@ const Producto = ({producto,productos,changuito,agregarProducto}) => {
             producto => producto.id===id)[0];
             agregarProducto([
                 ...changuito,
-                producto]);
+                producto]);  //aca agrega un producto al changuito
         
         console.log(producto);
     }
 
     // ELIMINAR DE CHANGUITO
-    const eliminarProducto=(id) => {
+  
+        const eliminarProducto = (id) => {
+            const productos = changuito.filter (
+                producto => producto.id !== id);
+        
+            // Actualizar el state
+                agregarProducto (productos);
+        };
 
-        const compra= changuito.filter(
-            producto => producto.id !== id)[0];
-            agregarProducto([
-               changuito,producto
-                ]);
-     
-            
+
+       
              
         
-        console.log(compra);
-    } 
-
     return (
         <Fragment>
             <div>
-            <h3>{id}{articulo}{precio}</h3>
+            <h5>{id}{articulo}{precio}</h5>
             {
                 productos
 
