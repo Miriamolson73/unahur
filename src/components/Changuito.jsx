@@ -3,25 +3,33 @@ import "./changuito.css";
 import Producto from "./Producto";
 
 
-const Changuito = ({changuito}) => {
+const Changuito = ({changuito,agregarProducto}) => {
 
     
     return (
         <Fragment>
             <div className="changuito">
-                <h6>CHANGUITO DE COMPRAS</h6>
+                <h5>CHANGUITO DE COMPRAS</h5>
                 {
-                    changuito
+                    changuito.length === 0
 
                     ?
-                    changuito.map(
-                            producto=>
-                            <Producto
-                                key={producto.id}
-                                producto={producto}
-                    />  )     
-                    :
-                    <button>changuito vacio</button>
+                    ( 
+                    <h3>Changuito vacío</h3>
+                    )
+                    : 
+                    (
+                    changuito.map (
+                    producto => (
+                        <Producto 
+                            key= {producto.id}
+                            changuito = {changuito}
+                            agregarProducto = {agregarProducto}
+                            producto = {producto}
+                        />
+                    )
+                    )
+                    )
                    
                 }
 
